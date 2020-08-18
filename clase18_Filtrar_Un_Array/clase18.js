@@ -46,9 +46,10 @@ var personas = [Manuel, Raul, Veronica, Romero, Sahara, Lesley];
 //PAra filtar un arreglo, crearemos una funcion que nos retorne a todas aquellas personas que midan mas de 1.8m
 
 const personaAlta = persona => persona.altura > 1.8;
-
+const personaBaja = persona => persona.altura <1.8;
 //utilizaremos la sentencia filter() para pasar el dato de nuestra funcion creada anteriormente, recordemos que los datos dentro de esta funcion tienen que ser una condicion
 var personasAltas = personas.filter(personaAlta);
+var personasBajas = personas. filter(personaBaja);
 
 //La siguiente sentencia tambien es valida y eliminaria la funcion creada al principio y crearia una funcion anonima dentro de si misma
 //var personasAltas = personas.filter(function (persona){
@@ -56,4 +57,5 @@ var personasAltas = personas.filter(personaAlta);
 //});
 
 
-console.log (personasAltas);
+//console.log (personasAltas);
+console.log (personasBajas);
