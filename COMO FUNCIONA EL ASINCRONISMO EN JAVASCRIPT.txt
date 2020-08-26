@@ -1,0 +1,24 @@
+Tenemos que tener en cuenta que JS solo puede realizar una cosa a la vez no importa lo que hagamos
+el lenguaje no es capaz de ser multitarea, sin embargo JS puede delegar la ejecucion de ciertas funciones 
+a otros procesos y esta accion o modelo de concurrencia es llamada EVENT LOOP.
+
+JS internamente tiene algo llamado pila de ejecucion o call stack donde va poniendo las llamadas de las funciones 
+segun el orden de ejecucicon de nuestro programa lo que quiere decir que si una funcion llama a otra, esa se vaa
+agregar a la pila y cuando termina de ejecutar una funcion la saca de la pila y la desecha.
+
+En algun momento cuando nuestro programa requiere saber un dato, este dice que funcion tiene que ejecutar cuando los
+datos que requiere esten listos, en este caso puede ser una consulta a un navegador como puede ser el valor del dolar por ejemplo
+a esto se le llama CALL BACK,una funcion que JS ejecutara cuando el servidor tenga este valor.
+
+Mientras este proceso se cumple, JS seguira ejecutano nuestro codigo principal y cuando la peticion echa al servidor este lista, la respuesta 
+ira a parar a la cola de tareas, aqui las tareas se iran agregando segun el orden en el que van llegando
+por lo general las tareas que va a parar a esta lista son las peticiones a servidores, interacciones visuales, la navegacion cli inside, los eventos etc.
+
+Solo hasta que el programa se quede sin funciones en la pila de ejecucion, es que ira a buscar las funciones en la cola de tareas, es por eso que 
+tenemos que tener cuidado de no generar un cuello de botella en la pila de ejecucion ya que si JS se queda ejecutando tareas muy pesadas
+las funciones en la cola de tareas van a tardar mucho tiempo en ejecutarse.
+
+NO HAY QUE BLOQUEAR EL EVENT LOOP :)
+
+
+https://www.youtube.com/watch?v=bWvnWhVCHAc
