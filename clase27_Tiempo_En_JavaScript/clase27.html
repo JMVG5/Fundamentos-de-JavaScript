@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset='utf-8'>
+    <title>Clase 27 COMO FUNCIONA EL TIEMPO JS</title>
+</head>
+<body>
+    <script>
+        //para ver como funciona el tiempo con las tareas asincronas, tenemos una ejecucion en nuestra consola en donde por orden cronologico las tareas se ejecutan de a hasta c, sin embarg
+        //al momento de llegar a b, se ejecuta una funcion que lleva un retardo de 2 segundos, en nuestra pantalla podremos ver que se ejecutara a, y JS hara una peticion para que se ejecute b, continuara con c y cuando sus ejecuciones terminen
+        //ira a la cola de tareas y ejecutara la respuesta de b
+        //setTimeout sirve para colocar delays
+      //  console.log('a');
+        //setTimeout(function (){
+          //  console.log('b');
+        //}, 2000)
+        //console.log('c');
+
+        setTimeout(() => {console.log('d')}, 2000);
+        for (i=0; i<10000000000; i++){
+
+        }
+
+        //otro ejemplo fue el bloque de codigo anterior el cual mando a callback la funcion timeout y continuo ejecuntado el codigo y hasta que el contador no resolvio su incremento, fue y busco en la cola de tareas la respuesta al timeout e inmediatamente la mostro
+    </script>
+</body>
+</html>
