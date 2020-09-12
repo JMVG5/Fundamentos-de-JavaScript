@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset='utf-8'>
+    <title>Clase 37 DATES</title>
+</head>
+<body>
+    <script>
+        //crearemos una funcion para aplicar fechas en JS y calcular los dias que han pasado desde mi nacimiento hasta el dia de hoy
+function diasEntreFechas(fecha1, fecha2){
+    //las fechas siempre expresan el tiempo expresado en milisegundos, asi que crearemos una formula para transformar los milisegundo en dias
+const unDia = 1000 * 60 * 60 * 24
+//la funcion Math.abs nos entrega un numero absoluto por lo que si colocamos las fechas al reves el valor seria negativo pero abs lo transformara siempre a positivo
+const diferencia = Math.abs ( fecha1 - fecha2)
+//Math. floor nos permite redondear hacia abajo
+return Math.floor(diferencia / unDia)
+}
+
+//new Date() nos proporciona la fecha actual
+const hoy = new Date()
+//el constructor de un new Date para una fecha en especifico comienza con el a;o, luego mes iniciando enero en 0 y luego el dia
+const nacimiento = new Date (1996, 11, 14);
+
+/* También existen métodos para obtener un valor de la fecha en específico. Estos métodos son:
+getFullYear()
+getMonth()
+getDate()
+getHours()
+getMinutes()
+getSeconds()
+getMilliseconds()
+getTime()
+getDay()
+Date.now() */
+
+    </script>
+</body>
+</html>
