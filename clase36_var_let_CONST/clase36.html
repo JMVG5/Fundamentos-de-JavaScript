@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset='utf-8'>
+    <title>Clase 36 var, let, const</title>
+</head>
+<body>
+    <script> 
+    var manuel = {
+        nombre: 'Jose Manuel',
+        apellido: 'Venegas Garcia',
+        edad: 23
+    }
+
+    function esMayorDeEdad(persona){
+        if(persona.edad >= 18){
+            var mensaje = 'Es mayor de edad';
+        }else{
+            var mensaje = 'Es menor de edad';
+        }
+        console.log (mensaje);
+    }
+
+    esMayorDeEdad(manuel);
+
+    </script>
+</body>
+</html>
