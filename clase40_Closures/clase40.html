@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset='utf-8'>
+    <title>Clase 37 DATES</title>
+</head>
+<body>
+    <script>
+//los closures son funciones que recuerdan el estado de las cosas cuando fueron invocadas, ejemplo
+
+function crearSaludos(finalDeFrase){
+
+    return function (nombre){
+console.log(`Hola ${nombre} ${finalDeFrase}`)
+    }
+
+}
+const saludoArgentino = crearSaludos('CHE')
+const saludoMexicano = crearSaludos('we')
+const saludoChino = crearSaludos('Konnichiwa')
+
+saludoArgentino('Mane') //el resultado sera hola Mane CHE
+saludoMexicano('Mane')
+    </script>
+</body>
+</html>
