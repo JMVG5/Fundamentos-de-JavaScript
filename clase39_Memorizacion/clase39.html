@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset='utf-8'>
+    <title>Clase 37 DATES</title>
+</head>
+<body>
+    <script>
+//FACTORIALES
+//Los factoriales son una forma de ahorrar memoria en cache ya que nos permiten hacer cuentas o calculos utilizando operaciones previamente realizadas
+//de esta forma nuestro programa no tendra que repetir la misma operacion una y otra vez cada que la necesitemos 
+//esto se realiza de la siguiente manera 
+
+//(los factoriales son multiplicaciones realizadas a partir de un numero en retrospectiva, osea el resultado de una multiplicacion que llega del numero establecido a 1, ejemplo)
+//!6 = 6 * 5 * 4 * 3 * 2 * 1 = 720
+
+//la funcion de abajo lo que realizara sera una comparacion de nuestro parametro n, si este parametro es igual a uno la funcion se tremina, de lo contrario la operacion de n sera multiplicada por el numero que le corresponde y despues se retara para bajar a su proximo numero hasta llegar a 1
+
+
+//este resultado lo podemos guardar en una cache, para esto antes de realizar nuestrafuncion facorail, vamos a preguntar a nuestro programa si existe ya una cache para nuestro codigo
+//hay que recordar que una funcion puede tener atributos internos y definir una cache se realizaria de la siguiente manera
+//esta condicion nos permite crear un objeto cache que se usara mas adelante
+
+
+function factorial (n){
+
+if (!this.cache){
+    this.cache = {}
+}
+
+//esta condicion de aqui nos sirve unicamente para saber si previamente el valor n ya fue calculado, si n ya fue calculado con anteriroridad, lo que hacemos es retornar ese valor desde la cache y listo, si n no ha sido calculado entraremos a nuestra operacion de calculo factorial 
+ if (this.cache[n]){
+     return this.cache[n]
+ }
+
+    if (n === 1){
+        return 1
+    }
+    //para guardar nuestro objeto tendremos que hacer referencia a nuestro  cache asignandole un atributo, ejemplo
+
+    this.cache[n]= n * factorial (n - 1)
+
+//despues retornaremos su valor 
+return this.cache[n]
+}
+
+//al realizar esta funcin, lo que hacemos es crear una operacion por unica vez y en cuandto la funcion se ejecute y su resultado sea obtenido, este sera guardado en un espacio de memoria gracias a la cache, de esta manera
+//cuando ejecutemos nuevamente esta funcion con el mismo parametro, la operacion ya no tnedra que ser realizada, el programa simplemente ira a la cache del mismo y obtendra el resultado
+//de esta manera ahorraremos mucho espacio de procesamineto para operaciones complejas.
+
+    </script>
+</body>
+</html>
