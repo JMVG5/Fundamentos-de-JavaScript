@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset='utf-8'>
+    <title>Clase 41 Datos inmutables</title>
+</head>
+<body>
+    <script>
+//los efectos de lado, son acciones que nos modifican el valor de alguna variable sin que nosotros lo deseemos
+//Para evitar este problema tendriamos que estar seguros de que al momendo de llamar una funcion estos datos no se estan modificando y para eso se crean los datos inmutables
+const mane = {
+    nombre: 'Jose Manuel',
+    apellido: 'Venegas Garcia',
+    edad : 23
+} 
+//const cumpleaños = persona => persona.edad++
+
+//para que un valor no se vea alterado, al momento de crear una funcion le tendremos que pedir que nos devuelva un objeto desglosando a nuestro objeto principal y aui dentro modificaremos su edad 
+//de esta forma lo que hacemos es crear un nuevo objeto en la memoria y no alteramos el objeto principal
+const cumpleañosInmutable = persona => ({
+    ...persona,
+    edad : persona.edad + 1
+})
+    </script>
+</body>
+</html>
