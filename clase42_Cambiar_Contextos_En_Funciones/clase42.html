@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset='utf-8'>
+    <title>Clase 41 Datos inmutables</title>
+</head>
+<body>
+    <script>
+
+const mane = {
+    nombre: 'Jose Manuel',
+    apellido: 'Venegas Garcia',
+    edad : 23
+} 
+//si nosotros mandamos a llamar a nuestra funcion tal cual esta aqui, el programa lo que hara sera marcarla como indefinida ya que el .this hace referencia a window y en windo no tenemos nada declarado, nosotrs queremos hacer referencia al objeto
+function saludar (){
+    console.log (`Hola mi nombre es ${this.nombre}`)
+}
+
+//Para esto existe una funcion llamada .bind que lo que hace es devolver una nueva funcion atando el parametro que se le pasa al this de esa funcion, en este caso this busca dentro del objeto que se le esta pasando y no busca en window
+
+const saludarAMane = saludar.bind(mane);
+//Tambien contamos con la funcion call que lo que hace es ejecutarse en el momento en el que es llamada haciendo referencia a los paramentros que se le estan proporcionando
+//saludar.call(mane)
+
+//Y la funcion apply, similar a call la unica diferencia es que sus paramentro le llegan por medio de un arreglo
+//saludar.call(mane, ['hola', ...])
+
+    </script>
+</body>
+</html>
